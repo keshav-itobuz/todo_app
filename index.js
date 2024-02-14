@@ -6,6 +6,7 @@ let storedTask = JSON.parse(localStorage.getItem('taskList') || '[]');
 let buttonContainer = document.getElementById('buttonSection');
 
 let prevActiveButton = document.querySelector('.allButton')
+let allActiveCompleted="all";
 
 storedTask.forEach((item) => {
     taskCreator(item, item.id);
@@ -21,11 +22,11 @@ addTaskButton.addEventListener('click', (item) => {
             break;
         }
     }
-    if (newTask.value !== "") {
+    if (check === 0) {
         alert("Repeated task spotted!!!")
         newTask.value = "";
     }
-    else if (check !== 0) { }
+    else if (newTask.value === "") { }
     else {
         let uniqueId = new Date().getTime();
         const createdTask = {
@@ -58,17 +59,25 @@ taskList.addEventListener('click', (e) => {
     if (e.target.className.includes("completedTask")) {
         let taskId = e.target.dataset.completed_item;
         let check = storedTask.find((item) => (item.id).toString() === (taskId).toString());
+        const card = document.getElementById(taskId);
+        const heading = card.getElementsByTagName("h4");
         if (e.target.checked === true) {
             check.status = "completed";
+            heading[0].style.textDecorationLine = "line-through";
+            if(allActiveCompleted==="active"){
+                taskList.removeChild(card);
+            }
         }
         else {
             check.status = "active";
+            heading[0].style.textDecorationLine = "none";
+            heading[0].style.textDecorationLine = "line-through";
+            if(allActiveCompleted==="completed"){
+                taskList.removeChild(card);
+            }
         }
         localStorage.setItem('taskList', JSON.stringify(storedTask));
-        // taskList.innerHTML="";
-        // storedTask.forEach((item) => {
-        //     taskCreator(item, item.id);
-        // })
+
     }
 })
 
@@ -90,6 +99,7 @@ buttonContainer.addEventListener('click', (e) => {
         })
     }
     if (e.target.className.includes("completedButton")) {
+        allActiveCompleted="completed";
         storedTask = storedTask.filter((item) => item.status === "completed");
         taskList.innerText = "";
         storedTask.forEach((item) => {
@@ -97,6 +107,7 @@ buttonContainer.addEventListener('click', (e) => {
         })
     }
     if (e.target.className.includes("activeButton")) {
+        allActiveCompleted="active";
         storedTask = storedTask.filter((item) => item.status === "active");
         taskList.innerText = "";
         storedTask.forEach((item) => {
@@ -104,6 +115,7 @@ buttonContainer.addEventListener('click', (e) => {
         })
     }
     if (e.target.className.includes("allButton")) {
+        allActiveCompleted="all";
         taskList.innerText = "";
         storedTask.forEach((item) => {
             taskCreator(item, item.id);
