@@ -29,6 +29,7 @@ button:hover {
   min-width: 100%;
   background-color: #bdb2ff;
   border-radius: 5px;
+  height: 100vh;
 }
 
 .card {
@@ -62,7 +63,11 @@ button:hover {
 #buttonSection {
   margin-top: 10px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+#buttonSection::-webkit-scrollbar {
+  display: none;
 }
 
 .buttonQuery {
@@ -82,8 +87,10 @@ button:hover {
   border: 0;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .content_container {
     min-width: 45vw;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }/*# sourceMappingURL=style.css.map */

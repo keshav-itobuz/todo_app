@@ -27,6 +27,7 @@ button {
   min-width: 100%;
   background-color: #bdb2ff;
   border-radius: 5px;
+  height: 100vh;
 }
 
 .card {
@@ -59,7 +60,12 @@ button {
 #buttonSection {
   margin-top: 10px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+
 }
 .buttonQuery {
   background-color: #fdffb6 !important;
@@ -76,8 +82,9 @@ button {
   border: 0;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .content_container {
     min-width: 45vw;
+    height: fit-content;
   }
 }
