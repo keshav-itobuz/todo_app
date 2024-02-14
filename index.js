@@ -70,8 +70,7 @@ taskList.addEventListener('click', (e) => {
         }
         else {
             check.status = "active";
-            heading[0].style.textDecorationLine = "none";
-            heading[0].style.textDecorationLine = "line-through";
+            heading[0].style.textDecorationLine ="none";
             if(allActiveCompleted==="completed"){
                 taskList.removeChild(card);
             }

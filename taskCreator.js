@@ -26,8 +26,8 @@ export function taskCreator(item, uniqueId) {
         completedTask.checked = true;
         task.style.textDecorationLine="line-through";
     }
-    // else{
-    //     task.style.textDecorationLine="none";
-    // }
+    else{
+        task.style.textDecorationLine="none";
+    }
 
 }
