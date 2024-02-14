@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: 0;
+  border-radius: 3px;
+}
+button:hover {
+  cursor: pointer;
+}
+
+#taskInput {
+  outline: none;
+  border-radius: 5px;
+  border: 0;
+  width: 100%;
+  margin-right: 10px;
+  padding: 13px 0;
+}
+
+#addTask {
+  background-color: #9bf6ff !important;
+}
+
+.content_container {
+  min-width: 100%;
+  background-color: #bdb2ff;
+  border-radius: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #9bf6ff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.task {
+  width: 32.3vw;
+  text-wrap: nowrap;
+  overflow: auto;
+}
+.task::-webkit-scrollbar {
+  display: none;
+}
+
+.completedContainer {
+  display: flex;
+  gap: 10px;
+}
+
+#buttonSection {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.buttonQuery {
+  background-color: #fdffb6 !important;
+}
+
+.deleteTask {
+  background-color: #ffadad !important;
+  color: white;
+}
+.deleteTask:hover {
+  background-color: #f35858 !important;
+}
+
+.active {
+  background-color: #ffd6a5 !important;
+  border: 0;
+}
+
+@media (min-width: 576px) {
+  .content_container {
+    min-width: 45vw;
+  }
+}/*# sourceMappingURL=style.css.map */
