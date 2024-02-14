@@ -24,10 +24,10 @@ export function taskCreator(item, uniqueId) {
 
     if (item.status === "completed") {
         completedTask.checked = true;
-        task.style.textDecorationLine="line-through";
+        // task.style.textDecorationLine="line-through";
     }
-    else{
-        task.style.textDecorationLine="none";
-    }
+    // else{
+    //     task.style.textDecorationLine="none";
+    // }
 
 }

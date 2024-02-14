@@ -51,6 +51,11 @@ button {
   display: flex;
   gap: 10px;
 }
+.completedTask{
+    &:hover{
+        cursor: pointer;
+    }
+}
 #buttonSection {
   margin-top: 10px;
   display: flex;

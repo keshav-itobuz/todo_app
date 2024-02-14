@@ -22,7 +22,12 @@ addTaskButton.addEventListener('click', (item) => {
         break;
     }
    }
-    if (newTask.value !== "" && check!==0) {
+    if (newTask.value !== "") {
+        alert("Repeated task spotted!!!")
+        newTask.value="";
+    }
+    else if(check!==0){}
+    else{
         let uniqueId = new Date().getTime();
         const createdTask = {
             id: uniqueId,
@@ -61,10 +66,10 @@ taskList.addEventListener('click', (e) => {
             check.status = "active";
         }
         localStorage.setItem('taskList', JSON.stringify(storedTask));
-        taskList.innerHTML="";
-        storedTask.forEach((item) => {
-            taskCreator(item, item.id);
-        })
+        // taskList.innerHTML="";
+        // storedTask.forEach((item) => {
+        //     taskCreator(item, item.id);
+        // })
     }
 })
 
@@ -84,7 +89,6 @@ buttonContainer.addEventListener('click', (e) => {
         storedTask.forEach((item) => {
             taskCreator(item, item.id);
         })
-
     }
     if (e.target.className.includes("completedButton")) {
         storedTask = storedTask.filter((item) => item.status === "completed");
