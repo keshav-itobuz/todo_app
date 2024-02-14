@@ -51,18 +51,18 @@ button {
   display: flex;
   gap: 10px;
 }
-.completedTask{
-    &:hover{
-        cursor: pointer;
-    }
+.completedTask {
+  &:hover {
+    cursor: pointer;
+  }
 }
 #buttonSection {
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
 }
-.buttonQuery{
-    background-color: #fdffb6!important;
+.buttonQuery {
+  background-color: #fdffb6 !important;
 }
 .deleteTask {
   background-color: #ffadad !important;

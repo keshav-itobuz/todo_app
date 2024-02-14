@@ -15,19 +15,18 @@ storedTask.forEach((item) => {
 addTaskButton.addEventListener('click', (item) => {
     storedTask = JSON.parse(localStorage.getItem('taskList') || '[]');
     let check;
-   for(let i=0;i<storedTask.length;i++){
-    if(newTask.value.localeCompare(storedTask[i].task)===0)
-    {
-        check=0;
-        break;
+    for (let i = 0; i < storedTask.length; i++) {
+        if (newTask.value.localeCompare(storedTask[i].task) === 0) {
+            check = 0;
+            break;
+        }
     }
-   }
     if (newTask.value !== "") {
         alert("Repeated task spotted!!!")
-        newTask.value="";
+        newTask.value = "";
     }
-    else if(check!==0){}
-    else{
+    else if (check !== 0) { }
+    else {
         let uniqueId = new Date().getTime();
         const createdTask = {
             id: uniqueId,
@@ -96,7 +95,6 @@ buttonContainer.addEventListener('click', (e) => {
         storedTask.forEach((item) => {
             taskCreator(item, item.id);
         })
-
     }
     if (e.target.className.includes("activeButton")) {
         storedTask = storedTask.filter((item) => item.status === "active");
