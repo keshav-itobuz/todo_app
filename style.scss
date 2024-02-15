@@ -11,6 +11,7 @@ button {
   }
   border-radius: 3px;
 }
+
 #taskInput {
   outline: none;
   border-radius: 5px;
@@ -62,10 +63,9 @@ button {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     display: none;
   }
-
 }
 .buttonQuery {
   background-color: #fdffb6 !important;
