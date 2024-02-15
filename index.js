@@ -11,7 +11,6 @@ storedTask.forEach((item) => {
     taskCreator(item, item.id);
 })
 
-
 addTaskButton.addEventListener('click', (item) => {
     storedTask = JSON.parse(localStorage.getItem('taskList') || '[]');
     let check;
@@ -75,7 +74,6 @@ taskList.addEventListener('click', (e) => {
             }
         }
         localStorage.setItem('taskList', JSON.stringify(storedTask));
-
     }
 })
 
@@ -92,7 +90,6 @@ buttonContainer.addEventListener('click', (e) => {
         localStorage.setItem('taskList', JSON.stringify(storedTask));
         const allButton = document.getElementById('allButton');
         allButton.click();
-
     }
     if (e.target.className.includes("completedButton")) {
         allActiveCompleted = "completed";

@@ -81,10 +81,20 @@ button {
   background-color: #ffd6a5 !important;
   border: 0;
 }
+#taskList {
+  max-height: 60vh;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 @media (min-width: 768px) {
   .content_container {
     min-width: 45vw;
     height: fit-content;
+  }
+  #taskList {
+    max-height: 46vh;
   }
 }

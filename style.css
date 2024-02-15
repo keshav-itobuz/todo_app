@@ -87,10 +87,21 @@ button:hover {
   border: 0;
 }
 
+#taskList {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+#taskList::-webkit-scrollbar {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .content_container {
     min-width: 45vw;
     height: -moz-fit-content;
     height: fit-content;
+  }
+  #taskList {
+    max-height: 46vh;
   }
 }/*# sourceMappingURL=style.css.map */
