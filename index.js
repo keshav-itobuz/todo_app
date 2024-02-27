@@ -58,11 +58,13 @@ taskList.addEventListener('click', (e) => {
         let obj = document.getElementById(dataAttribute);
         obj.remove();
     }
+
     if (e.target.className.includes("completedTask")) {
         const taskId = e.target.dataset.completed_item;
         const check = storedTask.find((item) => (item.id).toString() === (taskId).toString());
         const card = document.getElementById(taskId);
         const heading = card.getElementsByTagName("h4");
+        
         if (e.target.checked === true) {
             check.status = "completed";
             heading[0].style.textDecorationLine = "line-through";
@@ -73,6 +75,7 @@ taskList.addEventListener('click', (e) => {
         else {
             check.status = "active";
             heading[0].style.textDecorationLine = "none";
+
             if (allActiveCompleted === "completed") {
                 taskList.removeChild(card);
             }
@@ -89,23 +92,27 @@ buttonContainer.addEventListener('click', (e) => {
     if (e.target.tagName !== 'BUTTON') {
         return;
     }
+
     if (e.target.className.includes("clearButton")) {
         storedTask = storedTask.filter((item) => item.status === "active");
         localStorage.setItem('taskList', JSON.stringify(storedTask));
         const allButton = document.getElementById('allButton');
         allButton.click();
     }
+
     if (e.target.className.includes("completedButton")) {
         allActiveCompleted = "completed";
         storedTask = storedTask.filter((item) => item.status === "completed");
         reRender(storedTask);
     }
+
     if (e.target.className.includes("activeButton")) {
         allActiveCompleted = "active";
         storedTask = storedTask.filter((item) => item.status === "active");
         reRender(storedTask);
 
     }
+    
     if (e.target.className.includes("allButton")) {
         allActiveCompleted = "all";
         reRender(storedTask);
